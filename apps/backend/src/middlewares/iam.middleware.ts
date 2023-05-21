@@ -1,9 +1,5 @@
 import { services } from '../services';
-import { ZodiosRequestHandler } from '@zodios/express';
-import { Api } from '../api';
-import { UserContextSchema } from '../schemas/types.schema';
-import { RequestFormat } from '@zodios/core/lib/zodios.types';
-import { NextFunction, Request, RequestHandler, Response } from 'express';
+import { RequestHandler } from 'express';
 
 // How type this middleware?
 export const iam: RequestHandler = async (req, res, next) => {

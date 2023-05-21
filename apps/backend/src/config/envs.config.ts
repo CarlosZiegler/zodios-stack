@@ -14,7 +14,7 @@ if (!_serverEnv.success) {
 }
 
 const SERVER = {
-	port: _serverEnv.data.PORT,
+	PORT: _serverEnv.data.PORT,
 	SUPABASE_ANON_KEY: _serverEnv.data.SUPABASE_ANON_KEY,
 	SUPABASE_URL: _serverEnv.data.SUPABASE_URL,
 	SUPABASE_SERVICE_ROLE_KEY: _serverEnv.data.SUPABASE_SERVICE_ROLE_KEY,

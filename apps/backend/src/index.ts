@@ -23,12 +23,12 @@ export const startServer = async () => {
 	Logger.info(' - adding rate limit...');
 	initRateLimit(app);
 
-	app.listen(envs.server.port, () => {
+	app.listen(envs.server.PORT, () => {
 		// const routes = app._router.stack;
 
 		// app._router.stack.forEach(print.bind(null, []));
 
-		Logger.info(`Server is running PORT :${envs.server.port}`);
+		Logger.info(`Server is running PORT :${envs.server.PORT}`);
 	});
 };
 
