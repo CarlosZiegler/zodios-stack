@@ -1,8 +1,14 @@
 import { api } from '../api';
 import { userContext } from '../context/user.context';
 import { authController } from '../controllers/auth.controller';
+import { StatusCodes } from 'http-status-codes';
 
-export const authRouter = userContext.router(api);
+export const authRouter = userContext.router(api, {
+	validationErrorHandler: (err: any, req: any, res, next) => {
+		console.log(err);
+		return res.status(StatusCodes.BAD_REQUEST).json(err);
+	},
+});
 
 authRouter.post('/auth/sign-up', authController.signUp);
 authRouter.post('/auth/sign-in', authController.signIn);

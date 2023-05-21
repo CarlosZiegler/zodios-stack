@@ -5,7 +5,6 @@ import { UserContextSchema } from '../schemas/types.schema';
 
 const signUp: ZodiosRequestHandler<Api, UserContextSchema, 'post', '/auth/sign-up'> = async (req, res, next) => {
 	const { email, password } = req.body;
-	console.log(email);
 	const { data, error } = await services.supabase.auth.signUpWithPassword({
 		email,
 		password,
@@ -77,21 +76,6 @@ const signInWithOTPMail: ZodiosRequestHandler<Api, UserContextSchema, 'post', '/
 	return res.status(200).send(data);
 };
 
-// const iam: ZodiosRequestHandler<Api, UserContextSchema, 'get', '//iam'> = async (req, res, next) => {
-// 	console.log(req);
-// 	const authorization = req.headers.authorization || req.headers.Authorization;
-// 	if (!authorization) {
-// 		throw new Error('there is no bearer token in the headers');
-// 	}
-
-// 	const token = (authorization as string).split(' ')[1];
-// 	const { data, error } = await services.supabase.auth.getCurrentUser(token);
-// 	if (error) {
-// 		return next(error);
-// 	}
-// 	return res.status(200).send(data);
-// };
-
 const resetPasswordForEmail: ZodiosRequestHandler<
 	Api,
 	UserContextSchema,
@@ -156,7 +140,6 @@ export const authController = {
 	signInWithProvider,
 	signInWithOTPhone,
 	signInWithOTPMail,
-	// iam,
 	resetPasswordForEmail,
 	refreshToken,
 	logout,
