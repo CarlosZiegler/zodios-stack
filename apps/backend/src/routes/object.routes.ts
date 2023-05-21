@@ -1,6 +1,6 @@
-import { storageController } from '../../controllers';
-import { userContext } from '../../context';
-import { api } from '../../api';
+import { storageController } from '../controllers';
+import { userContext } from '../context';
+import { api } from '../api';
 
 export const objectRouter = userContext.router(api);
 
