@@ -10,20 +10,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@hookform/resolvers": "^3.1.0",
     "@mantine/core": "^6.0.11",
     "@mantine/notifications": "^6.0.11",
     "@tanstack/react-query": "^4.29.7",
+    "@tanstack/react-query-devtools": "^4.29.7",
     "@tanstack/react-table": "^8.9.1",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@zodios/core": "^10.9.0",
     "@zodios/react": "^10.4.5",
     "axios": "^1.4.0",
+    "backend": "workspace:*",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.4",
+    "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.11.2",
+    "tabler-icons-react": "^1.56.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
@@ -32,7 +42,9 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "msw": "^1.2.1",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "vite": "^4.3.2",
+    "vitest": "^0.30.1"
   }
 }

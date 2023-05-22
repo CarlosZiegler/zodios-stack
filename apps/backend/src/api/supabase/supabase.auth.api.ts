@@ -100,23 +100,12 @@ const signInWithOTPPhone = makeEndpoint({
 
 const iamParams = makeParameters([
 	{
-		name: 'get current user',
-		description: 'get current user',
-		schema: z.object({
-			Authorization: z.string(),
-		}),
+		name: 'Authorization',
+		description: 'Bearer token',
+		schema: z.string(),
 		type: 'Header',
 	},
 ]);
-
-// const iam = makeEndpoint({
-// 	method: 'get',
-// 	path: '/iam',
-// 	response: signInResponseSchema.omit({ session: true }),
-// 	alias: 'iam',
-// 	description: 'Get current user',
-// 	parameters: iamParams,
-// });
 
 const resetPasswordForEmail = makeEndpoint({
 	method: 'post',
@@ -129,10 +118,10 @@ const resetPasswordForEmail = makeEndpoint({
 
 const refreshTokenParams = makeParameters([
 	{
-		name: 'refresh token',
+		name: 'refreshToken',
 		description: 'refresh token',
 		schema: z.object({
-			refreshToken: z.string(),
+			refreshToken: z.string().optional(),
 		}),
 		type: 'Body',
 	},
@@ -170,7 +159,6 @@ export const authApi = makeApi([
 	signInWithProvider,
 	signInWithOTPMail,
 	signInWithOTPPhone,
-	// iam,
 	resetPasswordForEmail,
 	refreshToken,
 	logout,

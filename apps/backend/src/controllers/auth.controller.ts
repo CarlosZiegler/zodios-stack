@@ -98,6 +98,10 @@ const refreshToken: ZodiosRequestHandler<Api, UserContextSchema, 'post', '/auth/
 ) => {
 	const { refreshToken } = req.body;
 
+	if (!refreshToken) {
+		return next(new Error('No refresh token'));
+	}
+
 	const { data, error } = await services.supabase.auth.refreshToken({
 		refreshToken,
 	});
