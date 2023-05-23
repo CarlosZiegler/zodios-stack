@@ -12,7 +12,7 @@ import {
   Center,
   createStyles,
 } from '@mantine/core';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -22,7 +22,7 @@ import { routes } from '../../routes';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import ErrorMessage from '../../components/ErrorMessage';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   root: {
     width: '100%',
   },
@@ -69,8 +69,6 @@ export function LoginForm() {
       <Paper p={30} mt={30} radius="md">
         <Group style={{ width: '100%' }}>
           <TextInput
-            // style={{ width: '100%' }}
-
             className={(styles.classes.root, styles.classes.label)}
             label="Email"
             placeholder="you@example.com"

@@ -1,24 +1,15 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import {
-  Controller,
-  SubmitHandler,
-  useForm,
-  useFormContext,
-} from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   TextInput,
   PasswordInput,
-  Checkbox,
   Paper,
   Title,
-  Text,
   Container,
   Group,
   Button,
-  Select,
   Center,
-  Divider,
+  createStyles,
 } from '@mantine/core';
 import { DevTool } from '@hookform/devtools';
 
@@ -28,7 +19,18 @@ import { SignupSchemaType, signupSchema } from './SignUp.schema';
 import { routes } from '../../routes';
 import { useRegister } from '../../hooks';
 
+const useStyles = createStyles(() => ({
+  root: {
+    width: '100%',
+  },
+  label: {
+    width: '100%',
+    textAlign: 'start',
+  },
+}));
+
 export const SignUpForm = () => {
+  const styles = useStyles();
   const {
     register,
     handleSubmit,
@@ -39,10 +41,10 @@ export const SignUpForm = () => {
     mode: 'onChange',
   });
 
-  const { mutate: handleRegister, isLoading, isError, error } = useRegister();
+  const { mutate: handleRegister, isLoading } = useRegister();
 
   const onSubmit: SubmitHandler<SignupSchemaType> = async (data) => {
-    const { email, password, confirmPassword } = data;
+    const { email, password } = data;
 
     handleRegister({ email, password });
   };
@@ -78,8 +80,7 @@ export const SignUpForm = () => {
         <Paper shadow="md" p={30} mt={30} radius="md">
           <Group style={{ width: '100%' }}>
             <TextInput
-              style={{ width: '100%' }}
-              mt="md"
+              className={(styles.classes.root, styles.classes.label)}
               label="Email"
               type="email"
               placeholder="you@domain.com"
@@ -91,12 +92,11 @@ export const SignUpForm = () => {
 
           <Group style={{ width: '100%' }}>
             <PasswordInput
-              style={{ width: '100%' }}
+              className={(styles.classes.root, styles.classes.label)}
               label="Password"
               autoComplete="new-password"
               placeholder="New password"
               required
-              mt="md"
               {...register('password')}
             />
 
@@ -104,27 +104,19 @@ export const SignUpForm = () => {
           </Group>
           <Group style={{ width: '100%' }}>
             <PasswordInput
-              style={{ width: '100%' }}
+              className={(styles.classes.root, styles.classes.label)}
               label="Confirm Password"
               placeholder="Please confirm your password"
               autoComplete="new-password"
               required
-              mt="md"
               {...register('confirmPassword')}
             />
 
             <ErrorMessage inputName={'confirmPassword'} errors={errors} />
           </Group>
 
-          <Divider my={25} />
-
           <Center mt={25}>
-            <Button
-              mt="xl"
-              type="button"
-              disabled={!isValid}
-              loading={isLoading}
-            >
+            <Button type="button" disabled={!isValid} loading={isLoading}>
               Continue
             </Button>
           </Center>
