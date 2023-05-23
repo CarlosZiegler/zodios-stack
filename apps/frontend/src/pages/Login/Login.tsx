@@ -3,11 +3,6 @@ import { LoginForm } from './Login.Form';
 
 const useStyles = createStyles((theme) => ({
   form: {
-    borderRight: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
-    }`,
-    // minHeight: '100vh',
-    // maxWidth: 450,
     paddingTop: 80,
     display: 'flex',
     flexDirection: 'column',
@@ -23,7 +18,7 @@ const useStyles = createStyles((theme) => ({
 export const Login = () => {
   const { classes } = useStyles();
   return (
-    <Paper className={classes.form} radius={0} p={30}>
+    <Paper className={classes.form} radius="md" p={30} shadow="md">
       <LoginForm />
     </Paper>
   );
