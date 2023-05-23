@@ -1,81 +1,105 @@
-# Turborepo starter
+# Turborepo Starter with Zodios
 
-This is an official starter Turborepo.
+This is an official starter Turborepo enhanced with Zodios, a REST API toolbox that offers end-to-end type safety.
 
-## Using this example
+## Stack
 
-Run the following command:
+**Backend:**
+
+- Typescript
+- Zodios
+- Express
+- Zod
+- Supabase
+
+**Frontend:**
+
+- React
+- Vite
+- React Query
+- Mantine
+- Zodios
+
+## Zodios Overview
+
+Zodios allows you to create a REST API with a clean, intuitive, and declarative syntax. With Zodios, you can develop an Express application with full type safety and autocompletion, making your coding experience more efficient and error-free. Unique to Zodios, it guarantees that all your parameters and responses are fully typed. By default, they are also validated at runtime to prevent unrecoverable errors.
+
+[https://www.zodios.org/]()
+
+# Backend Project
+
+## About
+
+This project is a backend built with TypeScript. It provides a suite of functionalities and services for an unspecified application. The author is Carlos Ricardo Ziegler.
+
+## Technologies Used
+
+1. **TypeScript**: The project is built in TypeScript, a statically typed version of JavaScript.
+2. **Prisma**: Used for ORM, with dedicated scripts for syncing database schemas and generating Prisma client.
+3. **Express.js**: This project uses Express.js as its web server framework.
+4. **Docker**: Used for services orchestration.
+5. **Redis**: Utilized for session management.
+6. **Supabase**: Utilized for providing database, authentication, and storage functionalities.
+7. **Zod & Zodios**: Used for data validation. Zodios is a REST API toolbox with end-to-end typesafety. It offers a clean, intuitive, and declarative syntax for creating REST APIs. Its sub-packages like `@zodios/core`, `@zodios/plugins`, `@zodios/express`, and `@zodios/openapi` are utilized in this project.
+8. **Vitest**: Utilized for testing.
+9. **Eslint** and **Prettier**: Utilized to maintain code quality and consistency.
+
+## How to Run
+
+To run this project on your local machine, follow the steps:
+
+1. Install the project dependencies with `npm install` or `yarn`.
+2. To run the server in development mode, use the command `npm run dev` or `yarn dev`. This will start the server and automatically restart whenever there are changes to `.ts` files.
+3. To run the tests, use `npm run test` or `yarn test`. To run tests with coverage, use `npm run test:coverage` or `yarn test:coverage`.
+4. To lint the code, use `npm run lint` or `yarn lint`. To auto-fix linting problems, use `npm run lint:fix` or `yarn lint:fix`.
+5. To format the code with Prettier, use `npm run format` or `yarn format`.
+6. To build the project for production, use `npm run build` or `yarn build`. This will generate an optimized version of the project in the `dist` folder.
+7. To start the server in production, use `npm run start` or `yarn start`.
+
+## Docker Compose
+
+This project has support for Docker and Docker Compose. To start the services using Docker Compose, use `npm run services:up` or `yarn services:up`. To stop the services, use `npm run services:stop` or `yarn services:stop`.
+
+## environments
 
 ```sh
-npx create-turbo@latest
+HOSTNAME=localhost
+PORT=5001
+SUPABASE_PROJECT_ID=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_URL=
+SUPABASE_JWT=
+DATABASE_URL=
+REDIS_URL=
 ```
 
-## What's inside?
+# Frontend Project
 
-This Turborepo includes the following packages/apps:
+## About
 
-### Apps and Packages
+This is a frontend project built with React.js and TypeScript. It provides a user interface for an unspecified application.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## Technologies Used
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+1. **React.js & TypeScript**: This project is built with React.js, a popular JavaScript library for building user interfaces, and TypeScript, a statically typed version of JavaScript.
+2. **Vite**: This project uses Vite for its build tool and dev server.
+3. **React Query & Tanstack**: Used for data fetching, caching, synchronization and updates in React applications.
+4. **React Router Dom**: Used for managing routing in the React app.
+5. **React Hook Form**: Used for managing form state and validation.
+6. **Zod & Zodios**: Used for data validation. Zodios is a REST API toolbox with end-to-end typesafety, utilized in this project through `@zodios/core` and `@zodios/react`.
+7. **Mantine**: Used for providing UI components.
+8. **Eslint**: Utilized to maintain code quality and consistency.
+9. **React Testing Library**: Utilized for unit and integration testing.
 
-### Utilities
+## How to Run
 
-This Turborepo has some additional tools already setup for you:
+To run this project on your local machine, follow the steps:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+1. Install the project dependencies with `npm install` or `yarn`.
+2. To run the server in development mode, use the command `npm run dev` or `yarn dev`. This will start the dev server with hot module replacement.
+3. To lint the code, use `npm run lint` or `yarn lint`.
+4. To build the project for production, use `npm run build` or `yarn build`. This will generate an optimized version of the project ready for deployment.
+5. To preview the build, use `npm run preview` or `yarn preview`.
 
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## License
