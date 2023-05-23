@@ -1,42 +1,42 @@
 🚧 **WORK IN PROGRESS** 🚧
 
-Please note that this project is currently under development. Functionality may change and there may be many bugs!
+Please note that this project is currently under development. Functionality may change and there may be many bugs! 🐜
 
-# Turborepo Starter with Zodios
+# Turborepo Starter with Zodios 🧰
 
 This is an starter Turborepo enhanced with Zodios, a REST API toolbox that offers end-to-end type safety.
 
-## Stack
+## Stack 📚
 
 **Backend:**
 
-- Typescript
-- Zodios
-- Express
-- Zod
-- Supabase
+- Typescript 🟦
+- Zodios 🛠️
+- Express 🚆
+- Zod 📝
+- Supabase 🗃️
 
 **Frontend:**
 
-- React
-- Vite
-- React Query
-- Mantine
-- Zodios
+- React 🌐
+- Vite ⚡
+- React Query 📊
+- Mantine 🎨
+- Zodios 🛠️
 
-## Zodios Overview
+## Zodios Overview 🎯
 
 Zodios allows you to create a REST API with a clean, intuitive, and declarative syntax. With Zodios, you can develop an Express application with full type safety and autocompletion, making your coding experience more efficient and error-free. Unique to Zodios, it guarantees that all your parameters and responses are fully typed. By default, they are also validated at runtime to prevent unrecoverable errors.
 
 [https://www.zodios.org/]()
 
-# Backend Project
+# Backend Project 🔧
 
-## About
+## About 🗣️
 
 This project is a backend built with TypeScript. It provides a suite of functionalities and services for an unspecified application. The author is Carlos Ricardo Ziegler.
 
-## Technologies Used
+## Technologies Used 🖥️
 
 1. **TypeScript**: The project is built in TypeScript, a statically typed version of JavaScript.
 2. **Prisma**: Used for ORM, with dedicated scripts for syncing database schemas and generating Prisma client.
@@ -48,7 +48,7 @@ This project is a backend built with TypeScript. It provides a suite of function
 8. **Vitest**: Utilized for testing.
 9. **Eslint** and **Prettier**: Utilized to maintain code quality and consistency.
 
-## How to Run
+## How to Run 🏃‍♀️
 
 To run this project on your local machine, follow the steps:
 
@@ -60,11 +60,11 @@ To run this project on your local machine, follow the steps:
 6. To build the project for production, use `npm run build` or `yarn build`. This will generate an optimized version of the project in the `dist` folder.
 7. To start the server in production, use `npm run start` or `yarn start`.
 
-## Docker Compose
+## Docker Compose 🐳
 
 This project has support for Docker and Docker Compose. To start the services using Docker Compose, use `npm run services:up` or `yarn services:up`. To stop the services, use `npm run services:stop` or `yarn services:stop`.
 
-## environments
+## Environments 🌳
 
 ```sh
 HOSTNAME=localhost
@@ -76,15 +76,16 @@ SUPABASE_URL=
 SUPABASE_JWT=
 DATABASE_URL=
 REDIS_URL=
+
 ```
 
-# Frontend Project
+# Frontend Project 🌐
 
-## About
+## About 🗣️
 
 This is a frontend project built with React.js and TypeScript. It provides a user interface for an unspecified application.
 
-## Technologies Used
+## Technologies Used 🖥️
 
 1. **React.js & TypeScript**: This project is built with React.js, a popular JavaScript library for building user interfaces, and TypeScript, a statically typed version of JavaScript.
 2. **Vite**: This project uses Vite for its build tool and dev server.
@@ -96,7 +97,7 @@ This is a frontend project built with React.js and TypeScript. It provides a use
 8. **Eslint**: Utilized to maintain code quality and consistency.
 9. **React Testing Library**: Utilized for unit and integration testing.
 
-## How to Run
+## How to Run 🏃‍♀️
 
 To run this project on your local machine, follow the steps:
 
@@ -106,4 +107,23 @@ To run this project on your local machine, follow the steps:
 4. To build the project for production, use `npm run build` or `yarn build`. This will generate an optimized version of the project ready for deployment.
 5. To preview the build, use `npm run preview` or `yarn preview`.
 
-## License
+## Libraries & Authors 📚
+
+1. **TypeScript** - JavaScript with syntax for types. [Website](https://www.typescriptlang.org/)
+2. **Prisma** - Next-generation Node.js and TypeScript ORM. [Website](https://www.prisma.io/)
+3. **Express.js** - Fast, unopinionated, minimalist web framework for Node.js. [Website](https://expressjs.com/)
+4. **Docker** - Empowering App Development for Developers. [Website](https://www.docker.com/)
+5. **Redis** - In-memory data structure store. [Website](https://redis.io/)
+6. **Supabase** - Open Source Firebase Alternative. [Website](https://supabase.io/)
+7. **Zod** - TypeScript-first schema declaration and validation. [GitHub](https://github.com/colinhacks/zod) by Colin Hacks.
+8. **Zodios** - REST API toolbox that offers end-to-end type safety. [Website](https://www.zodios.org/)
+9. **Vitest** - A new breed of test runner. [GitHub](https://github.com/vitest-dev/vitest) by Evan You.
+10. **Eslint** - Pluggable JavaScript linter. [Website](https://eslint.org/)
+11. **Prettier** - Opinionated Code Formatter. [Website](https://prettier.io/)
+12. **React.js** - A JavaScript library for building user interfaces. [Website](https://reactjs.org/)
+13. **Vite** - Next Generation Frontend Tooling. [Website](https://vitejs.dev/) by Evan You.
+14. **React Query** - Hooks for fetching, caching and updating asynchronous data in React. [Website](https://react-query.tanstack.com/) by Tanner Linsley.
+15. **React Router Dom** - Declarative routing for React. [Website](https://reactrouter.com/)
+16. **React Hook Form** - Performant, flexible and extensible forms with easy-to-use validation. [Website](https://react-hook-form.com/)
+17. **Mantine** - A fully featured React UI library. [Website](https://mantine.dev/)
+18. **React Testing Library** - Simple and complete testing utilities that encourage good testing practices. [Website](https://testing-library.com/docs/react-testing-library/intro/)
