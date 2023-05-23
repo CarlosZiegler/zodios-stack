@@ -18,7 +18,9 @@
 		"prisma:generate": "prisma generate",
 		"clean": "rm -rf dist",
 		"services:up": "docker-compose -f ./docker-compose.dev.yml up -d",
-		"services:stop": "docker-compose -f ./docker-compose.dev.yml stop"
+		"services:stop": "docker-compose -f ./docker-compose.dev.yml stop",
+		"redis:up": "docker run --name backend-redis -p 6379:6379 -d redis",
+		"redis:stop": "docker stop backend-redis"
 	},
 	"author": "Carlos Ricardo Ziegler",
 	"license": "ISC",

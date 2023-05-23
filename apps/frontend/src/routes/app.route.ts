@@ -1,5 +1,7 @@
 export const appRoutes = {
   main: '/',
+  notifications: '/notifications',
+  settings: '/settings',
   auth: {
     signUp: '/auth/sign-up',
     signIn: '/auth/sign-in',

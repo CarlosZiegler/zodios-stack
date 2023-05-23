@@ -38,7 +38,12 @@ export const forgotPassword = (email: string) =>
     email,
   });
 
-export const iam = () => apiClient.iam();
+export const iam = () =>
+  apiClient.iam({
+    headers: {
+      Authorization: `Bearer ${Cookies.get('x-auth-token')}` as const,
+    },
+  });
 
 export const auth = {
   signUp,

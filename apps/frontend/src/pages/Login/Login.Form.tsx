@@ -10,6 +10,7 @@ import {
   Divider,
   Space,
   Center,
+  createStyles,
 } from '@mantine/core';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -21,7 +22,18 @@ import { routes } from '../../routes';
 import { ThemeToggle } from '../../components/ThemeToggle';
 import ErrorMessage from '../../components/ErrorMessage';
 
+const useStyles = createStyles((theme) => ({
+  root: {
+    width: '100%',
+  },
+  label: {
+    width: '100%',
+    textAlign: 'start',
+  },
+}));
+
 export function LoginForm() {
+  const styles = useStyles();
   const {
     register,
     handleSubmit,
@@ -30,27 +42,8 @@ export function LoginForm() {
     resolver: zodResolver(credentialsSchema),
     mode: 'onChange',
   });
-  const navigate = useNavigate();
 
   const { mutate: handleLogin, isLoading, isError, error } = useLogin();
-
-  // useEffect(() => {
-  //   if (Cookies.get('x-auth-token')) {
-  //     navigate(routes.app.main);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (isError) {
-  //     showNotification({
-  //       autoClose: 5000,
-  //       title: 'Invalid details',
-  //       message: error?.message,
-  //       color: 'red',
-  //       loading: false,
-  //     });
-  //   }
-  // }, [isError]);
 
   const onSubmit: SubmitHandler<CredentialsSchemaType> = async (data) => {
     const { email, password } = data;
@@ -76,7 +69,9 @@ export function LoginForm() {
       <Paper p={30} mt={30} radius="md">
         <Group style={{ width: '100%' }}>
           <TextInput
-            style={{ width: '100%' }}
+            // style={{ width: '100%' }}
+
+            className={(styles.classes.root, styles.classes.label)}
             label="Email"
             placeholder="you@example.com"
             required
@@ -90,6 +85,7 @@ export function LoginForm() {
             style={{ width: '100%' }}
             label="Password"
             placeholder="Your password"
+            className={(styles.classes.root, styles.classes.label)}
             required
             mt="md"
             {...register('password')}

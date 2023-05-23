@@ -25,11 +25,7 @@ export const UIProvider = ({
         withGlobalStyles
         withNormalizeCSS
       >
-        <Notifications
-          position="top-right"
-          zIndex={3000}
-          style={{ paddingTop: '70px' }}
-        />
+        <Notifications position="top-right" zIndex={3000} />
         {children}
       </MantineProvider>
     </ColorSchemeProvider>
