@@ -1,6 +1,10 @@
+🚧 **WORK IN PROGRESS** 🚧
+
+Please note that this project is currently under development. Functionality may change and there may be many bugs!
+
 # Turborepo Starter with Zodios
 
-This is an official starter Turborepo enhanced with Zodios, a REST API toolbox that offers end-to-end type safety.
+This is an starter Turborepo enhanced with Zodios, a REST API toolbox that offers end-to-end type safety.
 
 ## Stack
 
